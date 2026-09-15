@@ -65,7 +65,7 @@
 
 ### Specific Changes (5.1.0)
 
-- __Note this sub-section only covers specific changes for 5.1.0-rc6 to 5.1.0. Please refer to [other sections of the CHANGELOG](https://github.com/Macjutsu/super/blob/main/CHANGELOG.md) full details of all the changes.__
+- __Note this sub-section only covers specific changes for 5.1.0-rc6 to 5.1.0. Please refer to [other sections of the CHANGELOG](https://github.com/Macjutsu/super/blob/main/CHANGELOG.md) for the full details of all the changes.__
 - [Main `super` Wiki significantly updated for version 5.1.x!](https://github.com/Macjutsu/super/wiki)
 - [All new example screenshots (also moved into their own folder) for version 5.1.x!](https://github.com/Macjutsu/super/blob/main/Example-Screenshots/5.1.x)
 - All external `super` documentation (like the Wiki and this CHANGELOG file) ran through Apple Writing Tools Proofread function.
