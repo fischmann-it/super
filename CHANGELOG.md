@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## [5.1.1]
+## [5.1.2]
 
-2026-07-21
+2026-09-15
 
 ## Highlights (5.1.x)
 
@@ -28,7 +28,7 @@
 
 ### Compatibility Notes (5.1.x)
 
-- `super` 5.1.x requires macOS 11 or newer.
+- __`super` 5.1.x supports macOS 11 through macOS 26. Support for later versions of macOS are available in [newer versions of `super`](https://github.com/Macjutsu/super/releases).__
 - __Many `super` 4.x command line options and managed preferences are NOT compatible with `super` 5.1.x__
 - __Most `super` 3.0 command line options and managed preferences are not compatible with `super` 5.1.x__
 - __Previously saved `super` 3.0 and 4.x Apple silicon authentication credentials are automatically migrated the first time `super` 5.1.x runs.__
@@ -40,16 +40,22 @@
 
 ### Known Issues (5.x)
 
-- __macOS 27 is still in beta. The `super` workflow relies heavily on mechanisms that are built-in to macOS. As such, support for this operating system should be considered beta-quality as well.__
-- __macOS 27 and later no longer supports MDM enforcement of macOS updates or upgrades. This completely disables any `super` workflow that leverages Jamf Pro API credentials.__
-- The `super` workflow does not currently support Declarative Device Management (DDM) software update settings. You should continue to use traditional MDM configuration profiles to enforce software update settings.
+- __No version of `super` 5.x is compatible with macOS 27 or later. Support for later versions of macOS are available in [newer versions of `super`](https://github.com/Macjutsu/super/releases).__
+- The `super` 5.x workflow does not support Declarative Device Management (DDM) software update settings. You should continue to use traditional MDM configuration profiles to enforce software update settings.
 - There are currently no publicly available [Background Security Improvement (BSI, formerly named Rapid Security Response) updates](https://support.apple.com/en-us/102657) for any version of macOS. As such, production BSI update workflows have not been validated against this version of `super`.
 - The [Jamf Pro "new" Managed Software Updates feature](https://learn.jamf.com/r/en-US/jamf-pro-documentation-current/Updating_macOS_Using_Managed_Software_Updates) remains unreliable if the workflow target is not the latest minor update or major upgrade. In the meantime, the legacy Jamf Pro software update API remains stable (although deprecated) and local authentication is always the most reliable.
+
+### Specific Changes (5.1.2)
+
+- __Note this sub-section only covers specific changes for 5.1.1 to 5.1.2. Please refer to [other sections of the CHANGELOG](https://github.com/Macjutsu/super/blob/main/CHANGELOG.md) full details of all the changes.__
+- The `super` workflow automatically exits if running on macOS 27 or later.
+- Improved helper verification mechanism now allows for installation of newer versions than required by the `super` workflow. (Thanks to @smithjw for this!)
+- Resolved an issue that may cause inaccurate macOS update targeting when the `--install-macos-minor-version-target` or `--install-macos-major-version-target` options were used.
+- `super` [5.1.2 SHA-256: a8ac2a725c7b1402b23e835dc507eb9a37a3d67c20d25abab31b4f6ab221c2d6](https://github.com/Macjutsu/super/blob/5.1.2/super.checksum.txt)
 
 ### Specific Changes (5.1.1)
 
 - __Note this sub-section only covers specific changes for 5.1.0 to 5.1.1. Please refer to [other sections of the CHANGELOG](https://github.com/Macjutsu/super/blob/main/CHANGELOG.md) full details of all the changes.__
-- Initial support for macOS 27 betas. This includes new error handling for the end of support for MDM authenticated workflows.
 - Improved `dscl` search mechanism improves support for network user accounts (Thanks to @tranziq for catching this one!)
 - Resolved a cache validation issue that could cause logic errors. (Thanks to @mdicecca for catching this one!)
 - Resolved an issue affecting the deletion of `--scheduled-install-date` option. (Thanks to @ir77io for catching this one!)
